@@ -1,0 +1,19 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-img {
+  padding: 5%;
+  padding-left: 10%;
+}
+
+.flex-text {
+  width: 50%;
+  text-align: center;
+  padding: 5%;
+}
+
+.home-text {
+  text-wrap: wrap;
+}

@@ -1,0 +1,11 @@
+.timeline {
+  width: 100%;
+  max-width: 32rem;
+  margin: auto;
+}
+
+.timeline-connector {
+  width: 2px !important;
+  background-color: lightgray !important;
+  margin-left: 4px;
+}

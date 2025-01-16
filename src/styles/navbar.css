@@ -1,0 +1,43 @@
+.nav-bar {
+  width: 100%;
+  background-color: #6996ff;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* .navLink {
+  font-size: large;
+}
+.navLink:hover {
+  color: white;
+}
+
+.active-link {
+  color: white;
+  text-decoration: underline;
+} */
+.navLink {
+  font-size: large;
+  color: black; /* Standaardkleur voor links */
+  text-decoration: none; /* Verwijder standaard underline */
+  position: relative; /* Voor pseudo-element */
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.active-link {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.activeText {
+  color: white;
+}
