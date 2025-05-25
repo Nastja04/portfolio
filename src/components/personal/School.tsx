@@ -1,14 +1,13 @@
+import { Text } from "@chakra-ui/react";
 import {
   Timeline,
-  TimelineItem,
+  TimelineBody,
   TimelineConnector,
   TimelineHeader,
   TimelineIcon,
-  TimelineBody,
-  Typography,
+  TimelineItem
 } from "@material-tailwind/react";
 import "../../styles/school.css";
-import { Text } from "@chakra-ui/react";
 
 export default function School() {
   return (
@@ -22,72 +21,72 @@ export default function School() {
           <TimelineConnector className="timeline-connector" />
           <TimelineHeader className="h-3">
             <TimelineIcon />
-            <Typography variant="h6" color="blue-gray" className="leading-none">
-              HOGent (Gent) - 2022-2025
-            </Typography>
+            <Text variant="h6" color="blue-gray" className="leading-none">
+              HoGent (Gent) - 2022-2025
+            </Text>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
+            <Text
               variant="small"
-              color="gary"
+              color="gray"
               className="font-normal text-gray-600"
             >
               Professionele Bachelor Toegepaste Informatica met specialisatie
               Mobile & Enterprise Development.
-            </Typography>
+            </Text>
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
           <TimelineConnector className="timeline-connector" />
           <TimelineHeader className="h-3">
             <TimelineIcon />
-            <Typography variant="h6" color="blue-gray" className="leading-none">
+            <Text variant="h6" color="blue-gray" className="leading-none">
               Oscar Romerocollege (Dendermonde) - 3de graad - 2020-2022
-            </Typography>
+            </Text>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
+            <Text
               variant="small"
-              color="gary"
+              color="gray"
               className="font-normal text-gray-600"
             >
               IT en Netwerken
-            </Typography>
+            </Text>
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
           <TimelineConnector className="timeline-connector" />
           <TimelineHeader className="h-3">
             <TimelineIcon />
-            <Typography variant="h6" color="blue-gray" className="leading-none">
+            <Text variant="h6" color="blue-gray" className="leading-none">
               Oscar Romerocollege (Dendermonde) - 2de graad - 2018-2020
-            </Typography>
+            </Text>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
+            <Text
               variant="small"
-              color="gary"
+              color="gray"
               className="font-normal text-gray-600"
             >
               Sociale en Technische Wetenschappen
-            </Typography>
+            </Text>
           </TimelineBody>
         </TimelineItem>
         <TimelineItem>
           <TimelineHeader className="h-3">
             <TimelineIcon />
-            <Typography variant="h6" color="blue-gray" className="leading-none">
+            <Text variant="h6" color="blue-gray" className="leading-none">
               Oscar Romerocollege (Dendermonde) - 1ste graad - 2016-2018
-            </Typography>
+            </Text>
           </TimelineHeader>
           <TimelineBody className="pb-8">
-            <Typography
+            <Text
               variant="small"
-              color="gary"
+              color="gray"
               className="font-normal text-gray-600"
             >
               Sociale en Technische Vorming
-            </Typography>
+            </Text>
           </TimelineBody>
         </TimelineItem>
       </Timeline>

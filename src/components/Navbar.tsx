@@ -1,10 +1,10 @@
-import { Box, Flex, Stack } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import NavLink from "./nav/NavLink";
 
 import "../styles/navbar.css";
+import { NavbarLink } from "./nav/NavbarLink";
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -40,28 +40,28 @@ export default function Navbar() {
             direction={["column", "row", "row", "row"]}
             pt={[4, 4, 0, 0]}
           >
-            <NavLink to="/">
+            <NavbarLink to="/">
               <img
                 src="/Logo_NV.png"
                 alt="Logo"
                 className="h-10 w-10 rounded-full"
               />
-            </NavLink>
-            <NavLink to="/" isActive={isActive("/")}>
+            </NavbarLink>
+            <NavbarLink to="/" isActive={isActive("/")}>
               Home
-            </NavLink>
-            <NavLink to="/school" isActive={isActive("/school")}>
+            </NavbarLink>
+            <NavbarLink to="/school" isActive={isActive("/school")}>
               Opleidingen
-            </NavLink>
-            <NavLink to="/technologies" isActive={isActive("/technologies")}>
+            </NavbarLink>
+            <NavbarLink to="/technologies" isActive={isActive("/technologies")}>
               Technologieën
-            </NavLink>
-            <NavLink to="/projects" isActive={isActive("/projects")}>
+            </NavbarLink>
+            <NavbarLink to="/projects" isActive={isActive("/projects")}>
               Projecten
-            </NavLink>
-            <NavLink to="/contact" isActive={isActive("/contact")}>
+            </NavbarLink>
+            <NavbarLink to="/contact" isActive={isActive("/contact")}>
               Contact
-            </NavLink>
+            </NavbarLink>
           </Stack>
         </Box>
       </Flex>

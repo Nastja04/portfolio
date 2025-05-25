@@ -1,7 +1,14 @@
 import { Link, Text } from "@chakra-ui/react";
+import { FC } from "react";
 import "../../styles/navbar.css";
 
-export default function NavLink({ children, to = "/", isActive }) {
+interface NavbarLinkProps {
+  children: React.ReactNode;
+  to?: string;
+  isActive?: boolean;
+}
+
+export const NavbarLink: FC<NavbarLinkProps> = ({ children, to = "/", isActive }) => {
   return (
     <Link
       href={to}
