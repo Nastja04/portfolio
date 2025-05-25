@@ -3,9 +3,9 @@ import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Layout from "./components/Layout";
-import Contact from "./components/personal/Contact";
 import Projecten from "./components/personal/Projecten";
 import School from "./components/personal/School";
 import Tech from "./components/personal/Technology";

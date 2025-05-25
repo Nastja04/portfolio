@@ -11,22 +11,11 @@
   box-sizing: border-box;
 }
 
-/* .navLink {
-  font-size: large;
-}
-.navLink:hover {
-  color: white;
-}
-
-.active-link {
-  color: white;
-  text-decoration: underline;
-} */
 .navLink {
   font-size: large;
-  color: black; /* Standaardkleur voor links */
-  text-decoration: none; /* Verwijder standaard underline */
-  position: relative; /* Voor pseudo-element */
+  color: black;
+  text-decoration: none;
+  position: relative;
 }
 
 .navLink:hover {
