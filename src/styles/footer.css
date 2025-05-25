@@ -1,0 +1,18 @@
+.footer-box {
+  max-width: 100vw;
+  width: 100%;
+  margin-inline: auto;
+  background-color: #6996ff !important;
+  margin-top: 20px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
