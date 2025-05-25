@@ -1,6 +1,6 @@
 .nav-bar {
   width: 100%;
-  background-color: #6996ff;
+  background-color: #9fdefd !important;
   position: sticky;
   top: 0;
   display: flex;
@@ -9,24 +9,22 @@
   padding: 0 16px;
   z-index: 1000;
   box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 24px;
 }
 
 .navLink {
   font-size: large;
   color: black;
-  text-decoration: none;
   position: relative;
-}
 
-.navLink:hover {
-  color: white;
+  &:hover {
+    color: black;
+    border-bottom: 2px solid black;
+  }
 }
 
 .active-link {
-  color: white;
-  border-bottom: 2px solid white;
-}
-
-.activeText {
-  color: white;
+  color: black;
+  border-bottom: 2px solid black;
 }

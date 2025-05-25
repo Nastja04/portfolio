@@ -15,7 +15,7 @@ export default function Contact() {
     <Flex className="flexbox" direction={["column", "column", "column", "row"]}>
       {/* Contact */}
       <Box flex="1" maxW={["100%", "100%", "100%", "35%"]}>
-        <Card className="card" bg={"blue.100"} >
+        <Card className="card" bg="#9FDEFD">
           <CardHeader className="card-header">
             <Heading size={"lg"}>Contact informatie</Heading>
           </CardHeader>
@@ -26,7 +26,10 @@ export default function Contact() {
                 open voor nieuwe opportuniteiten en ideëen.
               </p>
               <p>
-                <a href="mailto:nastjavinck2004@gmail.com" className="flex-link">
+                <a
+                  href="mailto:nastjavinck2004@gmail.com"
+                  className="flex-link"
+                >
                   <FaEnvelope /> nastjavinck2004@gmail.com
                 </a>
               </p>
@@ -39,7 +42,7 @@ export default function Contact() {
       </Box>
       {/* Formulier */}
       <Box flex="1" maxW={["100%", "100%", "100%", "50%"]}>
-        <Card className="card" bg={"blue.100"}>
+        <Card className="card" variant="elevated">
           <CardHeader className="card-header">
             <Heading size={"lg"}>Stuur mij een bericht</Heading>
           </CardHeader>

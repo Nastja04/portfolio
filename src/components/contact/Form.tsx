@@ -1,5 +1,5 @@
-import { Button, Textarea } from "@chakra-ui/react";
-import emailjs from '@emailjs/browser';
+import { Alert, AlertIcon, Button, Collapse, Textarea } from "@chakra-ui/react";
+import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import "../../styles/form.css";
 import { InputField } from "./InputField";
@@ -14,6 +14,7 @@ export const Form = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState<string | null>(null);
+  const [isError, setIsError] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
   const sendMail = (e) => {
@@ -22,48 +23,76 @@ export const Form = () => {
     setIsSubmitting(true);
 
     if (!form.current) {
+      setIsError(true);
       setStateMessage("Form is not available");
       setIsSubmitting(false);
       return;
     }
-    emailjs
-      .sendForm(
-        serviceId,
-        templateId,
-        form.current,
-        publicKey
-      )
-      .then(
-        (result) => {
-          console.log(result);
-          setStateMessage("Verstuurd!");
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
-        },
-        (error) => {
-          console.error("Error sending email:", error);
-          setStateMessage("Er ging iets mis bij het versturen. Probeer het later opnieuw.");
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
-        }
-      );
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      (result) => {
+        setIsError(false);
+        setStateMessage("Verstuurd!");
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setStateMessage(null);
+        }, 5000);
+      },
+      (error) => {
+        setIsError(true);
+        setStateMessage(
+          "Er ging iets mis bij het versturen. Probeer het later opnieuw."
+        );
+        setIsSubmitting(false);
+        setTimeout(() => {
+          setStateMessage(null);
+        }, 5000);
+      }
+    );
     e.target.reset();
   };
 
   return (
-    <form ref={form} onSubmit={sendMail} className="form">
-      <InputField name={"name"} label="Naam" type={"text"} placeholder={"Naam"} />
-      <InputField name={"email"} label="E-mail" type={"text"} placeholder={"E-mail"} />
-      <InputField name={"title"} label="Onderwerp" type={"text"} placeholder={"Onderwerp"} />
-      <label className="input-label">Bericht</label>
-      <Textarea name={"message"} placeholder={"Typ hier je bericht..."} rows={4} required focusBorderColor={"dodgerBlue"} />
+    <>
+      <Collapse in={!!stateMessage}>
+        {stateMessage && (
+          <Alert status={isError ? "error" : "success"} mb={4}>
+            <AlertIcon />
+            {stateMessage}
+          </Alert>
+        )}
+      </Collapse>
+      <form ref={form} onSubmit={sendMail} className="form">
+        <InputField
+          name={"name"}
+          label="Naam"
+          type={"text"}
+          placeholder={"Naam"}
+        />
+        <InputField
+          name={"email"}
+          label="E-mail"
+          type={"text"}
+          placeholder={"E-mail"}
+        />
+        <InputField
+          name={"title"}
+          label="Onderwerp"
+          type={"text"}
+          placeholder={"Onderwerp"}
+        />
+        <label className="input-label">Bericht</label>
+        <Textarea
+          name={"message"}
+          placeholder={"Typ hier je bericht..."}
+          rows={4}
+          required
+          focusBorderColor={"dodgerBlue"}
+        />
 
-      <Button type="submit" disabled={isSubmitting} className="submit-button">Verstuur</Button>
-      {stateMessage && <p>{stateMessage}</p>}
-    </form>
+        <Button type="submit" disabled={isSubmitting} className="submit-button">
+          Verstuur
+        </Button>
+      </form>
+    </>
   );
 };

@@ -1,13 +1,18 @@
-import { Box, Divider, Image, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Image,
+  Link,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import "../styles/footer.css";
 
 export const Footer = () => {
   return (
-    <Box
-      p={{ base: 4, md: 8 }}
-      className="footer-box"
-    >
+    <Box p={{ base: 4, md: 8 }} className="footer-box">
       <Stack
         spacing={{ base: 8, md: 8 }}
         justifyContent="space-between"
@@ -19,20 +24,15 @@ export const Footer = () => {
           justifyContent="space-between"
           display={{ base: "none", sm: "flex" }}
         >
-          <VStack
-            spacing={4}
-            boxSize={{ base: "100%", md: "50%" }}
-            alignItems="flex-start"
-          >
+          <VStack spacing={4} boxSize={{ base: "100%", md: "50%" }}>
             <Box display="flex" alignItems="center">
-              <Link href="/">
+              <Link href="/" mr={4}>
                 <Image
                   src="/Logo_NV.png"
                   alt="Logo"
                   width="100px"
                   height="auto"
                   borderRadius="full"
-                  mr={2}
                 />
               </Link>
               <Text>
@@ -46,7 +46,9 @@ export const Footer = () => {
               Pagina's
             </Text>
             <VStack spacing={4} alignItems="flex-start">
-              <Link href="/contact" className="footer-link">Contact</Link>
+              <Link href="/contact" className="footer-link">
+                Contact
+              </Link>
             </VStack>
           </VStack>
           <VStack spacing={4} alignItems="flex-start">
@@ -54,15 +56,27 @@ export const Footer = () => {
               Contact
             </Text>
             <VStack spacing={2} alignItems="flex-start">
-              <Link href="https://github.com/Nastja04" target="_blank" className="footer-link">
+              <Link
+                href="https://github.com/Nastja04"
+                target="_blank"
+                className="footer-link"
+              >
                 <FaGithub />
                 <Text>GitHub</Text>
               </Link>
-              <Link href="https://www.linkedin.com/in/nastja-vinck-9b667a300/" target="_blank" className="footer-link">
+              <Link
+                href="https://www.linkedin.com/in/nastja-vinck-9b667a300/"
+                target="_blank"
+                className="footer-link"
+              >
                 <FaLinkedin />
                 <Text>LinkedIn</Text>
               </Link>
-              <Link href="mailto:nastjavinck2004@gmail.com" target="_blank" className="footer-link">
+              <Link
+                href="mailto:nastjavinck2004@gmail.com"
+                target="_blank"
+                className="footer-link"
+              >
                 <FaEnvelope />
                 <Text>E-mail</Text>
               </Link>

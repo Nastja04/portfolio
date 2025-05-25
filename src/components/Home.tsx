@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Image, Heading } from "@chakra-ui/react";
+import { Card, CardBody, CardHeader, Heading, Image } from "@chakra-ui/react";
 import "../styles/home.css";
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex-img">
         <Image
           objectFit="cover"
-          maxW={"275px"}
+          maxW={"250px"}
           src="./Selfie.jpg"
           alt="Selfie van mezelf"
           className="rounded-lg"
@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex-img">
           <Image
             objectFit="cover"
-            maxW={"275px"}
+            maxW={"250px"}
             src="./books.png"
             alt="Foto van boeken"
             ml={"-150"}
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex-img">
           <Image
             objectFit="cover"
-            maxW={"275px"}
+            maxW={"250px"}
             src="./cooking.png"
             alt="Foto van bakken"
             ml={50}

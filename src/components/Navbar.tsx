@@ -2,7 +2,6 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-
 import "../styles/navbar.css";
 import { NavbarLink } from "./nav/NavbarLink";
 
@@ -15,17 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Flex
-        as="nav"
-        className="nav-bar"
-        w="100%"
-        bg="#6996ff"
-        position="sticky"
-        top="0"
-        zIndex="1000"
-        mb={4}
-        p={4}
-      >
+      <Flex as="nav" className="nav-bar">
         <Box display={{ base: "block", md: "none" }} onClick={toggle}>
           {isOpen ? <CloseIcon /> : <HamburgerIcon />}
         </Box>
