@@ -7,8 +7,8 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { Form } from "../components/contact/Form";
 import "../styles/contact.css";
-import { Form } from "./contact/form";
 
 export const Contact = () => {
   return (
