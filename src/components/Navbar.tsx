@@ -39,8 +39,8 @@ export default function Navbar() {
             <NavbarLink to="/" isActive={isActive("/")}>
               Home
             </NavbarLink>
-            <NavbarLink to="/school" isActive={isActive("/school")}>
-              Opleidingen
+            <NavbarLink to="/career" isActive={isActive("/career")}>
+              Loopbaan
             </NavbarLink>
             <NavbarLink to="/technologies" isActive={isActive("/technologies")}>
               Technologieën

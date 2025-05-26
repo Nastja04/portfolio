@@ -10,7 +10,7 @@ import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import "../styles/contact.css";
 import { Form } from "./contact/form";
 
-export default function Contact() {
+export const Contact = () => {
   return (
     <Flex className="flexbox" direction={["column", "column", "column", "row"]}>
       {/* Contact */}
@@ -53,4 +53,4 @@ export default function Contact() {
       </Box>
     </Flex>
   );
-}
+};

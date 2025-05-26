@@ -1,0 +1,12 @@
+.timeline-card {
+  /* border: 2px solid #98aeba; */
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

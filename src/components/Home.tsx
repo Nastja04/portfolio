@@ -1,7 +1,7 @@
 import { Card, CardBody, CardHeader, Heading, Image } from "@chakra-ui/react";
 import "../styles/home.css";
 
-export default function Home() {
+export const Home = () => {
   return (
     <div className="flex-container">
       <div className="flex-img">
@@ -62,4 +62,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};

@@ -3,12 +3,13 @@ import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Contact from "./components/Contact";
-import Home from "./components/Home";
-import Layout from "./components/Layout";
-import Projecten from "./components/personal/Projecten";
-import School from "./components/personal/School";
-import Tech from "./components/personal/Technology";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { Career } from "./components/Career";
+import { Contact } from "./components/Contact";
+import { Home } from "./components/Home";
+import { Layout } from "./components/Layout";
+import { Projecten } from "./components/personal/Projecten";
+import { Technology } from "./components/personal/Technology";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/technologies",
-        element: <Tech />,
+        element: <Technology />,
       },
       {
         path: "/contact",
@@ -34,23 +35,26 @@ const router = createBrowserRouter([
         element: <Projecten />,
       },
       {
-        path: "/school",
-        element: <School />,
+        path: "/career",
+        element: <Career />,
       },
     ],
   },
 ]);
 
 const rootElement = document.getElementById("root");
+const theme = createTheme();
 
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <StrictMode>
-      <ChakraProvider>
-        <RouterProvider router={router} />
-      </ChakraProvider>
+      <ThemeProvider theme={theme}>
+        <ChakraProvider>
+          <RouterProvider router={router} />
+        </ChakraProvider>
+      </ThemeProvider>
     </StrictMode>
   );
 } else {
-  throw new Error('Root element not found');
+  throw new Error("Root element not found");
 }

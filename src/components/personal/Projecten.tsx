@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 
-export default function Projecten() {
+export const Projecten = () => {
   return (
     <div>
       <Text py={2} px={10} pb={10}>
@@ -74,4 +74,4 @@ export default function Projecten() {
       />
     </div>
   );
-}
+};

@@ -3,7 +3,7 @@ import "../App.css";
 import { Footer } from "./Footer";
 import Navbar from "./Navbar";
 
-export default function Layout() {
+export const Layout = () => {
   return (
     <div
       style={{
@@ -19,4 +19,4 @@ export default function Layout() {
       <Footer />
     </div>
   );
-}
+};

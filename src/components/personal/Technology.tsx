@@ -12,11 +12,11 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import { FaHtml5, FaJava, FaPython, FaReact } from "react-icons/fa";
-import { TbBrandCSharp } from "react-icons/tb";
 import { SiKotlin, SiMysql, SiSpringboot } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 import TechCard from "./TechCard";
 
-export default function Technology() {
+export const Technology = () => {
   return (
     <div>
       <Grid
@@ -164,4 +164,4 @@ export default function Technology() {
       </Grid>
     </div>
   );
-}
+};
