@@ -12,7 +12,10 @@ export const Career = () => {
         <CardContent>
           <Timeline position="alternate-reverse">
             <TimeLineItem title="Februari 2025 - Mei 2025">
-              <TimelineCard title="React Developer" location="Picky, Gent">
+              <TimelineCard
+                title="React Developer (stage)"
+                location="Picky, Gent"
+              >
                 <ul className="timeline-list">
                   <li>Features toevoegen</li>
                   <li>Bugs oplossen</li>
@@ -22,7 +25,7 @@ export const Career = () => {
             </TimeLineItem>
             <TimeLineItem title="Juli 2020 - Augustus 2024">
               <TimelineCard
-                title="Winkel bediende"
+                title="Winkel bediende (studentenjob)"
                 location="Delhaize, Dendermonde"
               >
                 <ul className="timeline-list">

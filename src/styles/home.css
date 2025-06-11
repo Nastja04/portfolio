@@ -16,4 +16,6 @@
 
 .home-text {
   text-wrap: wrap;
+  text-align: center;
+  padding-bottom: 20px;
 }

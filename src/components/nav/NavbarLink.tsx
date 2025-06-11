@@ -1,4 +1,4 @@
-import { Link, Text } from "@chakra-ui/react";
+import { Link, Typography } from "@mui/material";
 import { FC } from "react";
 import "../../styles/navbar.css";
 
@@ -8,16 +8,25 @@ interface NavbarLinkProps {
   isActive?: boolean;
 }
 
-export const NavbarLink: FC<NavbarLinkProps> = ({ children, to = "/", isActive }) => {
+export const NavbarLink: FC<NavbarLinkProps> = ({
+  children,
+  to = "/",
+  isActive,
+}) => {
   return (
     <Link
       href={to}
       className={`navLink ${isActive ? "active-link" : ""}`}
-      _hover={{ textDecoration: "none" }}
+      sx={{
+        textDecoration: "none",
+        "&:hover": {
+          textDecoration: "none",
+        },
+      }}
     >
-      <Text display="block" className={isActive ? "activeText" : ""}>
+      <Typography display="block" color="black" fontWeight={500}>
         {children}
-      </Text>
+      </Typography>
     </Link>
   );
-}
+};

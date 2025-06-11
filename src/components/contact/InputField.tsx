@@ -1,19 +1,25 @@
-import { Input } from "@chakra-ui/react";
-import { FC, HTMLInputTypeAttribute } from "react";
+import { TextField, TextFieldProps } from "@mui/material";
+import { FC } from "react";
 import "../../styles/form.css";
 
-interface InputFieldProps {
-  name: string;
-  label: string;
-  type: HTMLInputTypeAttribute;
-  placeholder: string;
-}
-
-export const InputField: FC<InputFieldProps> = ({ label, name, type, placeholder }) => {
+export const InputField: FC<TextFieldProps> = (props) => {
   return (
-    <>
-      <label className="input-label">{label}</label>
-      <Input type={type} name={name} placeholder={placeholder} required focusBorderColor={"dodgerBlue"} />
-    </>
+    <TextField
+      {...props}
+      required
+      fullWidth
+      margin="normal"
+      variant="outlined"
+      sx={{
+        "& .MuiOutlinedInput-root": {
+          "&:hover fieldset": {
+            borderColor: "dodgerblue",
+          },
+          "&.Mui-focused fieldset": {
+            borderColor: "dodgerblue",
+          },
+        },
+      }}
+    />
   );
 };

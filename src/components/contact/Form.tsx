@@ -1,5 +1,5 @@
-import { Alert, AlertIcon, Button, Collapse, Textarea } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
+import { Alert, Button, Collapse } from "@mui/material";
 import { useRef, useState } from "react";
 import "../../styles/form.css";
 import { InputField } from "./InputField";
@@ -18,7 +18,6 @@ export const Form = () => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendMail = (e) => {
-    e.persist();
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -55,8 +54,7 @@ export const Form = () => {
     <>
       <Collapse in={!!stateMessage}>
         {stateMessage && (
-          <Alert status={isError ? "error" : "success"} mb={4}>
-            <AlertIcon />
+          <Alert severity={isError ? "error" : "success"} sx={{ mb: 2 }}>
             {stateMessage}
           </Alert>
         )}
@@ -80,16 +78,19 @@ export const Form = () => {
           type={"text"}
           placeholder={"Onderwerp"}
         />
-        <label className="input-label">Bericht</label>
-        <Textarea
+        <InputField
+          label={"Bericht"}
           name={"message"}
           placeholder={"Typ hier je bericht..."}
-          rows={4}
-          required
-          focusBorderColor={"dodgerBlue"}
+          multiline
+          minRows={4}
         />
-
-        <Button type="submit" disabled={isSubmitting} className="submit-button">
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          variant="contained"
+          className="submit-button"
+        >
           Verstuur
         </Button>
       </form>

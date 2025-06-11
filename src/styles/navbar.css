@@ -4,27 +4,30 @@
   position: sticky;
   top: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 16px;
   z-index: 1000;
   box-sizing: border-box;
   margin-bottom: 20px;
-  padding: 24px;
+  padding: 12px;
 }
 
 .navLink {
   font-size: large;
-  color: black;
   position: relative;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom-color 0.2s;
 
   &:hover {
-    color: black;
+    border-bottom: 2px solid black;
+  }
+
+  &.active-link {
     border-bottom: 2px solid black;
   }
 }
 
-.active-link {
-  color: black;
-  border-bottom: 2px solid black;
+.navLink:has(img):hover,
+.navLink:has(img).active-link {
+  border-bottom: none !important;
 }
