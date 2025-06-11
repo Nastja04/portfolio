@@ -1,96 +1,96 @@
-import {
-  Box,
-  Divider,
-  Image,
-  Link,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Divider, Link, Stack, Typography } from "@mui/material";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import "../styles/footer.css";
 
 export const Footer = () => {
   return (
-    <Box p={{ base: 4, md: 8 }} className="footer-box">
+    <Box className="footer-box">
       <Stack
-        spacing={{ base: 8, md: 8 }}
+        spacing={8}
+        direction={{ xs: "column", md: "row" }}
         justifyContent="space-between"
-        direction={{ base: "column", md: "row" }}
       >
-        <Stack
-          spacing={8}
-          direction={"row"}
-          justifyContent="space-between"
-          display={{ base: "none", sm: "flex" }}
+        <Box
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "row",
+            gap: 8,
+            width: "100%",
+          }}
         >
-          <VStack spacing={4} boxSize={{ base: "100%", md: "50%" }}>
-            <Box display="flex" alignItems="center">
-              <Link href="/" mr={4}>
-                <Image
-                  src="/Logo_NV.png"
-                  alt="Logo"
-                  width="100px"
-                  height="auto"
-                  borderRadius="full"
-                />
+          <Box sx={{ flex: 2, display: "flex", alignItems: "center", gap: 1 }}>
+            <Link href="/" sx={{ mr: 4 }}>
+              <img
+                src="/Logo_NV.png"
+                alt="Logo"
+                style={{ width: "100px", height: "auto", borderRadius: "50%" }}
+              />
+            </Link>
+            <Typography>
+              Gemaakt door Nastja Vinck, frontend developer en student
+              Toegepaste Informatica aan HoGent.
+            </Typography>
+          </Box>
+          <Box className="footer-column">
+            <Typography variant="h6" fontWeight="bold">
+              Pagina&apos;s
+            </Typography>
+            <Box className="footer-col-links">
+              <Link href="/career" className="footer-link">
+                Loopbaan
               </Link>
-              <Text>
-                Gemaakt door Nastja Vinck, frontend developer en student
-                Toegepaste Informatica aan HoGent.
-              </Text>
-            </Box>
-          </VStack>
-          <VStack spacing={4} alignItems="flex-start">
-            <Text fontSize="xl" fontWeight="bold">
-              Pagina's
-            </Text>
-            <VStack spacing={4} alignItems="flex-start">
+              <Link href="/skills" className="footer-link">
+                Vaardigheden
+              </Link>
               <Link href="/contact" className="footer-link">
                 Contact
               </Link>
-            </VStack>
-          </VStack>
-          <VStack spacing={4} alignItems="flex-start">
-            <Text fontSize="xl" fontWeight="bold">
+            </Box>
+          </Box>
+          <Box className="footer-column">
+            <Typography variant="h6" fontWeight="bold">
               Contact
-            </Text>
-            <VStack spacing={2} alignItems="flex-start">
+            </Typography>
+            <Box className="footer-col-links">
               <Link
                 href="https://github.com/Nastja04"
                 target="_blank"
+                rel="noopener"
                 className="footer-link"
+                sx={{ display: "flex", alignItems: "center" }}
               >
                 <FaGithub />
-                <Text>GitHub</Text>
+                <Typography sx={{ ml: 1 }}>GitHub</Typography>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/nastja-vinck-9b667a300/"
                 target="_blank"
+                rel="noopener"
                 className="footer-link"
+                sx={{ display: "flex", alignItems: "center" }}
               >
                 <FaLinkedin />
-                <Text>LinkedIn</Text>
+                <Typography sx={{ ml: 1 }}>LinkedIn</Typography>
               </Link>
               <Link
                 href="mailto:nastjavinck2004@gmail.com"
-                target="_blank"
                 className="footer-link"
+                sx={{ display: "flex", alignItems: "center" }}
               >
                 <FaEnvelope />
-                <Text>E-mail</Text>
+                <Typography sx={{ ml: 1 }}>E-mail</Typography>
               </Link>
-            </VStack>
-          </VStack>
-        </Stack>
+            </Box>
+          </Box>
+        </Box>
       </Stack>
 
-      <Divider my={4} />
+      <Divider sx={{ my: 2 }} />
 
-      <Text fontSize="sm">
+      <Typography variant="body2">
         &copy; {new Date().getFullYear()} Nastja Vinck. Alle rechten
         voorbehouden.
-      </Text>
+      </Typography>
     </Box>
   );
 };

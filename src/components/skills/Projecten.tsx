@@ -1,14 +1,8 @@
-import { Text } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 
 export const Projecten = () => {
   return (
     <div>
-      <Text py={2} px={10} pb={10}>
-        Hieronder kan u al mijn projecten zien die ik in mijn periode aan HoGent
-        heb gemaakt, zowel zelfstandig als in groep.
-      </Text>
-
       <ProjectCard
         title={"Splendor"}
         imgUrl={"splendor.jpg"}

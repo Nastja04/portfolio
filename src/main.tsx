@@ -7,8 +7,7 @@ import { Career } from "./components/Career";
 import { Contact } from "./components/Contact";
 import { Home } from "./components/Home";
 import { Layout } from "./components/Layout";
-import { Projecten } from "./components/personal/Projecten";
-import { Technology } from "./components/personal/Technology";
+import { Skills } from "./components/Skills";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,16 +21,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/technologies",
-        element: <Technology />,
+        path: "/skills",
+        element: <Skills />,
       },
       {
         path: "/contact",
         element: <Contact />,
-      },
-      {
-        path: "/projects",
-        element: <Projecten />,
       },
       {
         path: "/career",
