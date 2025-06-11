@@ -1,10 +1,30 @@
-import { Card, CardContent, CardHeader, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardHeader, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import "../styles/home.css";
 
 export const Home = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   return (
-    <div className="flex-container">
-      <div className="flex-img">
+    <Box
+      className="flex-container"
+      flexDirection={isMobile ? "column" : "row"}
+      alignItems={isMobile ? "center" : "flex-start"}
+    >
+      <Box className="flex-img">
         <img
           src="./Selfie.jpg"
           alt="Selfie van mezelf"
@@ -15,31 +35,39 @@ export const Home = () => {
           }}
           className="rounded-lg"
         />
-        <div className="flex-img">
-          <img
-            src="./books.png"
-            alt="Foto van boeken"
-            style={{
-              objectFit: "cover",
-              maxWidth: "250px",
-              marginLeft: "-150px",
-            }}
-          />
-        </div>
-        <div className="flex-img">
-          <img
-            src="./cooking.png"
-            alt="Foto van bakken"
-            style={{
-              objectFit: "cover",
-              maxWidth: "250px",
-              marginLeft: "50px",
-              marginTop: "-100px",
-            }}
-          />
-        </div>
-      </div>
-      <div className="flex-text">
+
+        {!isMobile && (
+          <>
+            <Box className="flex-img">
+              <img
+                src="./books.png"
+                alt="Foto van boeken"
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "250px",
+                  marginLeft: "-150px",
+                }}
+              />
+            </Box>
+            <Box className="flex-img">
+              <img
+                src="./cooking.png"
+                alt="Foto van bakken"
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "250px",
+                  marginLeft: "50px",
+                  marginTop: "-100px",
+                }}
+              />
+            </Box>
+          </>
+        )}
+      </Box>
+      <Box
+        className="flex-text"
+        // justifyContent="center"
+      >
         <Card sx={{ textAlign: "left" }}>
           <CardHeader
             title={
@@ -71,7 +99,7 @@ export const Home = () => {
             </Typography>
           </CardContent>
         </Card>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };

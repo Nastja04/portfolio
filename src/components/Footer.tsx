@@ -10,77 +10,68 @@ export const Footer = () => {
         direction={{ xs: "column", md: "row" }}
         justifyContent="space-between"
       >
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "row",
-            gap: 8,
-            width: "100%",
-          }}
-        >
-          <Box sx={{ flex: 2, display: "flex", alignItems: "center", gap: 1 }}>
-            <Link href="/" sx={{ mr: 4 }}>
-              <img
-                src="/Logo_NV.png"
-                alt="Logo"
-                style={{ width: "100px", height: "auto", borderRadius: "50%" }}
-              />
+        <Box className="footer-column">
+          <Link href="/" sx={{ mr: 4 }}>
+            <img
+              src="/Logo_NV.png"
+              alt="Logo"
+              style={{ width: "100px", height: "auto", borderRadius: "50%" }}
+            />
+          </Link>
+          <Typography>
+            Gemaakt door Nastja Vinck, frontend developer en student Toegepaste
+            Informatica aan HoGent.
+          </Typography>
+        </Box>
+        <Box className="footer-column">
+          <Typography variant="h6" fontWeight="bold">
+            Pagina&apos;s
+          </Typography>
+          <Box className="footer-col-links">
+            <Link href="/career" className="footer-link">
+              Loopbaan
             </Link>
-            <Typography>
-              Gemaakt door Nastja Vinck, frontend developer en student
-              Toegepaste Informatica aan HoGent.
-            </Typography>
-          </Box>
-          <Box className="footer-column">
-            <Typography variant="h6" fontWeight="bold">
-              Pagina&apos;s
-            </Typography>
-            <Box className="footer-col-links">
-              <Link href="/career" className="footer-link">
-                Loopbaan
-              </Link>
-              <Link href="/skills" className="footer-link">
-                Vaardigheden
-              </Link>
-              <Link href="/contact" className="footer-link">
-                Contact
-              </Link>
-            </Box>
-          </Box>
-          <Box className="footer-column">
-            <Typography variant="h6" fontWeight="bold">
+            <Link href="/skills" className="footer-link">
+              Vaardigheden
+            </Link>
+            <Link href="/contact" className="footer-link">
               Contact
-            </Typography>
-            <Box className="footer-col-links">
-              <Link
-                href="https://github.com/Nastja04"
-                target="_blank"
-                rel="noopener"
-                className="footer-link"
-                sx={{ display: "flex", alignItems: "center" }}
-              >
-                <FaGithub />
-                <Typography sx={{ ml: 1 }}>GitHub</Typography>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/nastja-vinck-9b667a300/"
-                target="_blank"
-                rel="noopener"
-                className="footer-link"
-                sx={{ display: "flex", alignItems: "center" }}
-              >
-                <FaLinkedin />
-                <Typography sx={{ ml: 1 }}>LinkedIn</Typography>
-              </Link>
-              <Link
-                href="mailto:nastjavinck2004@gmail.com"
-                className="footer-link"
-                sx={{ display: "flex", alignItems: "center" }}
-              >
-                <FaEnvelope />
-                <Typography sx={{ ml: 1 }}>E-mail</Typography>
-              </Link>
-            </Box>
+            </Link>
+          </Box>
+        </Box>
+        <Box className="footer-column">
+          <Typography variant="h6" fontWeight="bold">
+            Contact
+          </Typography>
+          <Box className="footer-col-links">
+            <Link
+              href="https://github.com/Nastja04"
+              target="_blank"
+              rel="noopener"
+              className="footer-link"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FaGithub />
+              <Typography sx={{ ml: 1 }}>GitHub</Typography>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/nastja-vinck-9b667a300/"
+              target="_blank"
+              rel="noopener"
+              className="footer-link"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FaLinkedin />
+              <Typography sx={{ ml: 1 }}>LinkedIn</Typography>
+            </Link>
+            <Link
+              href="mailto:nastjavinck2004@gmail.com"
+              className="footer-link"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FaEnvelope />
+              <Typography sx={{ ml: 1 }}>E-mail</Typography>
+            </Link>
           </Box>
         </Box>
       </Stack>

@@ -9,9 +9,17 @@
 }
 
 .flex-text {
-  width: 50%;
+  display: flex;
+  width: 100%;
   text-align: center;
   padding: 5%;
+  justify-content: center;
+
+  @media (min-width: 769px) {
+    .flex-text {
+      width: 50%;
+    }
+  }
 }
 
 .home-text {
