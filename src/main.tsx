@@ -1,4 +1,3 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -49,9 +48,7 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <StrictMode>
       <ThemeProvider theme={theme}>
-        <ChakraProvider>
-          <RouterProvider router={router} />
-        </ChakraProvider>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </StrictMode>
   );
