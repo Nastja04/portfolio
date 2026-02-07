@@ -11,6 +11,16 @@ export const Career = () => {
         <CardHeader title="Werkervaring" />
         <CardContent>
           <Timeline position="alternate-reverse">
+            <TimeLineItem title="Augustus 2025 - heden">
+              <TimelineCard
+                title="Software Developer"
+                location="IRC, Dendermonde"
+              >
+                <ul className="timeline-list">
+                  <li>Database conversie (SSMS naar PostgreSQL)</li>
+                </ul>
+              </TimelineCard>
+            </TimeLineItem>
             <TimeLineItem title="Februari 2025 - Mei 2025">
               <TimelineCard
                 title="React Developer (stage)"

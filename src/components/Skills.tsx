@@ -3,8 +3,6 @@ import { skills } from "../data/skills";
 import TechCard from "./skills/TechCard";
 
 export const Skills = () => {
-  console.log("skills:", skills);
-  console.log("grid", Grid);
   return (
     <>
       <Card>
@@ -21,13 +19,15 @@ export const Skills = () => {
                 >
                   <CardHeader title={card.title} />
                   <CardContent>
-                    {card.skills.map((skill) => (
-                      <TechCard
-                        key={skill.name}
-                        text={skill.name}
-                        progress={skill.progress}
-                      />
-                    ))}
+                    {card.skills
+                      .sort((a, b) => b.progress - a.progress)
+                      .map((skill) => (
+                        <TechCard
+                          key={skill.name}
+                          text={skill.name}
+                          progress={skill.progress}
+                        />
+                      ))}
                   </CardContent>
                 </Card>
               </Grid>

@@ -27,7 +27,8 @@
   }
 }
 
-.navLink:has(img):hover,
-.navLink:has(img).active-link {
+.logoLink,
+.logoLink:hover,
+.logoLink.active-link {
   border-bottom: none !important;
 }

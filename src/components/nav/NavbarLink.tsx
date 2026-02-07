@@ -6,18 +6,22 @@ interface NavbarLinkProps {
   children: React.ReactNode;
   to?: string;
   isActive?: boolean;
+  className?: string;
 }
 
 export const NavbarLink: FC<NavbarLinkProps> = ({
   children,
   to = "/",
   isActive,
+  className = "",
 }) => {
   return (
     <Link
       href={to}
-      className={`navLink ${isActive ? "active-link" : ""}`}
+      underline="none"
+      className={`navLink ${className} ${isActive ? "active-link" : ""}`}
       sx={{
+        display: "inline-flex",
         textDecoration: "none",
         "&:hover": {
           textDecoration: "none",

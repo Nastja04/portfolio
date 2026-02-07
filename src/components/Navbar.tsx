@@ -45,7 +45,7 @@ export default function Navbar() {
               alignItems="center"
               pt={{ xs: 2, md: 0 }}
             >
-              <NavbarLink to="/">
+              <NavbarLink to="/" className="logoLink">
                 <img
                   src="/Logo_NV.png"
                   alt="Logo"
@@ -53,6 +53,7 @@ export default function Navbar() {
                     height: 40,
                     width: 40,
                     borderRadius: "50%",
+                    display: "block",
                   }}
                 />
               </NavbarLink>

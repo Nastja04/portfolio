@@ -19,8 +19,18 @@ export const Footer = () => {
             />
           </Link>
           <Typography>
-            Gemaakt door Nastja Vinck, frontend developer en student Toegepaste
-            Informatica aan HoGent.
+            Gemaakt door Nastja Vinck, software developer bij{" "}
+            <Link
+              href="https://irc.be"
+              target="_blank"
+              style={{
+                color: "black",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              IRC Engineering
+            </Link>
           </Typography>
         </Box>
         <Box className="footer-column">
@@ -55,7 +65,7 @@ export const Footer = () => {
               <Typography sx={{ ml: 1 }}>GitHub</Typography>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/nastja-vinck-9b667a300/"
+              href="https://www.linkedin.com/in/nastja-vinck"
               target="_blank"
               rel="noopener"
               className="footer-link"

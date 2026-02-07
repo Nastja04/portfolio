@@ -78,9 +78,10 @@ export const Home = () => {
           />
           <CardContent>
             <Typography className="home-text" component={"p"}>
-              Hallo, ik ben Nastja Vinck, 20 jaar en woon in Dendermonde. Ik ben
-              student PBA Toegepaste informatica aan HoGent met specialisatie
-              Mobile & Enterprise Development en zit in mijn laatste jaar.
+              Hallo, ik ben Nastja Vinck, 21 jaar en woon in Dendermonde. Ik heb
+              een passie voor software development en ben altijd op zoek naar
+              manieren om mijn vaardigheden te verbeteren en nieuwe
+              technologieën te leren.
             </Typography>
             <Typography className="home-text" component={"p"}>
               In mijn vrije tijd lees ik graag boeken en koken of bakken vind ik
